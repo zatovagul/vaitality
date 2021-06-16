@@ -30,7 +30,7 @@ class LoginView extends GetView<LoginController> {
             SizedBox(height: AppSizes.w1 * 16,),
             Obx(()=>PasswordAuthInput(onEyePressed: controller.switchPassword, showPassword: controller.showPassword.value,)),
             SizedBox(height: AppSizes.w1 * 16,),
-            CustomElevatedButton(onPressed: (){}, text: "ВОЙТИ",),
+            CustomElevatedButton(onPressed: (){Get.offAllNamed(Routes.MAIN_PAGE);}, text: "ВОЙТИ",),
             SizedBox(height: AppSizes.w1 * 15),
             Center(child: InkWell(onTap:(){},child: Text("Забыли пароль?", style: AppTextStyles.black15_w300,)),),
             SizedBox(height: AppSizes.w1 * 15),

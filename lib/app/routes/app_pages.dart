@@ -6,6 +6,8 @@ import 'package:vaitality/app/modules/home/login/views/login_view.dart';
 import 'package:vaitality/app/modules/home/registration/bindings/registration_binding.dart';
 import 'package:vaitality/app/modules/home/registration/views/registration_view.dart';
 import 'package:vaitality/app/modules/home/views/home_view.dart';
+import 'package:vaitality/app/modules/main_page/bindings/main_page_binding.dart';
+import 'package:vaitality/app/modules/main_page/views/main_page_view.dart';
 
 part 'app_routes.dart';
 
@@ -31,6 +33,11 @@ class AppPages {
           binding: LoginBinding(),
         ),
       ],
+    ),
+    GetPage(
+      name: _Paths.MAIN_PAGE,
+      page: () => MainPageView(),
+      binding: MainPageBinding(),
     ),
   ];
 }

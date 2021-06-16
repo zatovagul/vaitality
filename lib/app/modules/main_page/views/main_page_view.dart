@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_blue/flutter_blue.dart';
+import 'package:flutter_reactive_ble/flutter_reactive_ble.dart';
 
 import 'package:get/get.dart';
 
@@ -20,24 +20,21 @@ class MainPageView extends GetView<MainPageController> {
             margin: EdgeInsets.symmetric(horizontal: 15, vertical: 10),
             height: 40, width: double.infinity,
             child: TextButton(onPressed: controller.blScan,child: Text("SCAN"),),
-          ),
-          if(1==2)
-          StreamBuilder(
-              stream: controller.flutterBlue.scanResults,
-              builder: (context, AsyncSnapshot<List<ScanResult>> snapshot){
-                print(snapshot.data);
-                if(snapshot.data==null) return SizedBox();
-            return Column(
+          ), SizedBox(height: 10,),
+            Obx(()=>Center(child: Text("${controller.blStatus}"),)),
+          Obx(()=>Column(
               children: [
-                ...snapshot.data!.where((element) => element.device.name.isNotEmpty).map((e) =>
-                    Padding(
-                      padding: const EdgeInsets.all(10),
-                      child: Text("ScanResult{\ndevice: ${e.device},\n advertisementData: ${e.advertisementData},\n rssi: ${e.rssi}\n}"),
-                    )
-                )
+                ...controller.deviceMap.keys.map((e) => Padding(
+                  padding: const EdgeInsets.all(10),
+                  child: InkWell(
+                    onTap: (){controller.connect(e);},
+                      child: Text("${controller.deviceMap[e]} \n\n ${controller.connectingInfo[e]}")
+                  ),
+                ))
               ],
-            );
-          })
+            )
+            ,)
+
         ],
       ),
     );

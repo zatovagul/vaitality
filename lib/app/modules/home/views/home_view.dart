@@ -41,7 +41,8 @@ class HomeView extends GetView<HomeController> {
                   CustomTextButton(
                       onPressed: ()=>Get.toNamed(Routes.REGISTRATION),
                     text: "РЕГИСТРАЦИЯ",
-                    color: AppColors.lightGrey,)
+                    color: AppColors.lightGrey,),
+                  SizedBox(height: AppSizes.h1 * 35,)
                 ],
               ),
             )

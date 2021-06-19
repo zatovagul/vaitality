@@ -11,10 +11,11 @@ dependencies:
   flutter_svg: 0.22.0
   mask_text_input_formatter: 2.0.0
   permission_handler: ^8.1.1
-  flutter_blue: ^0.8.0
   flutter_reactive_ble: ^3.1.1+1
   dio: 4.0.0
   provider: 5.0.0
+  syncfusion_flutter_gauges: 19.1.69
+  intl: 0.17.0
   flutter: 
     sdk: flutter
 

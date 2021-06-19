@@ -7,6 +7,12 @@ import 'package:vaitality/app/modules/home/registration/bindings/registration_bi
 import 'package:vaitality/app/modules/home/registration/views/registration_view.dart';
 import 'package:vaitality/app/modules/home/views/home_view.dart';
 import 'package:vaitality/app/modules/main_page/bindings/main_page_binding.dart';
+import 'package:vaitality/app/modules/main_page/health_scan/bindings/health_scan_binding.dart';
+import 'package:vaitality/app/modules/main_page/health_scan/views/health_scan_view.dart';
+import 'package:vaitality/app/modules/main_page/pill_page/bindings/pill_page_binding.dart';
+import 'package:vaitality/app/modules/main_page/pill_page/views/pill_page_view.dart';
+import 'package:vaitality/app/modules/main_page/settings_page/bindings/settings_page_binding.dart';
+import 'package:vaitality/app/modules/main_page/settings_page/views/settings_page_view.dart';
 import 'package:vaitality/app/modules/main_page/views/main_page_view.dart';
 
 part 'app_routes.dart';
@@ -38,6 +44,23 @@ class AppPages {
       name: _Paths.MAIN_PAGE,
       page: () => MainPageView(),
       binding: MainPageBinding(),
+      children: [
+        GetPage(
+          name: _Paths.HEALTH_SCAN,
+          page: () => HealthScanView(),
+          binding: HealthScanBinding(),
+        ),
+        GetPage(
+          name: _Paths.PILL_PAGE,
+          page: () => PillPageView(),
+          binding: PillPageBinding(),
+        ),
+        GetPage(
+          name: _Paths.SETTINGS_PAGE,
+          page: () => SettingsPageView(),
+          binding: SettingsPageBinding(),
+        ),
+      ],
     ),
   ];
 }

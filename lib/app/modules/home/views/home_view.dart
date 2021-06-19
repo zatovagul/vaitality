@@ -12,6 +12,7 @@ import '../controllers/home_controller.dart';
 class HomeView extends GetView<HomeController> {
   @override
   Widget build(BuildContext context) {
+    final botHeight = MediaQuery.of(context).padding.bottom;
     return Scaffold(
       backgroundColor: AppColors.white,
       body: SafeArea(
@@ -42,7 +43,7 @@ class HomeView extends GetView<HomeController> {
                       onPressed: ()=>Get.toNamed(Routes.REGISTRATION),
                     text: "РЕГИСТРАЦИЯ",
                     color: AppColors.lightGrey,),
-                  SizedBox(height: AppSizes.h1 * 35,)
+                  SizedBox(height: botHeight<=AppSizes.h1 * 30 ? AppSizes.h1 * 30 - botHeight : 0,)
                 ],
               ),
             )

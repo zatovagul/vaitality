@@ -1,12 +1,16 @@
 import 'package:flutter/material.dart';
 
 import 'package:get/get.dart';
+import 'package:permission_handler/permission_handler.dart';
 import 'package:vaitality/app/constants/app_colors.dart';
 import 'package:vaitality/app/constants/app_textstyles.dart';
 
 import 'app/routes/app_pages.dart';
 
-void main() {
+void main(){
+  _checkPermission();
+  WidgetsFlutterBinding.ensureInitialized();
+
   runApp(
     GetMaterialApp(
       title: "Application",
@@ -15,6 +19,17 @@ void main() {
       theme: _getTheme
     ),
   );
+}
+
+_checkPermission()async{
+  try {
+    await Permission.bluetooth
+        .request()
+        .isGranted;
+    await Permission.location
+        .request()
+        .isGranted;
+  }catch(err){print(err);}
 }
 
 get _getTheme=>ThemeData.light().copyWith(

@@ -1,32 +1,39 @@
 PODS:
   - Flutter (1.0.0)
-  - flutter_blue (0.0.1):
+  - flutter_reactive_ble (0.0.1):
     - Flutter
-    - flutter_blue/Protos (= 0.0.1)
-  - flutter_blue/Protos (0.0.1):
+    - Protobuf (~> 3.5)
+    - SwiftProtobuf (~> 1.0)
+  - "permission_handler (5.1.0+2)":
     - Flutter
-    - Protobuf (~> 3.11.4)
-  - Protobuf (3.11.4)
+  - Protobuf (3.17.0)
+  - SwiftProtobuf (1.15.0)
 
 DEPENDENCIES:
   - Flutter (from `Flutter`)
-  - flutter_blue (from `.symlinks/plugins/flutter_blue/ios`)
+  - flutter_reactive_ble (from `.symlinks/plugins/flutter_reactive_ble/ios`)
+  - permission_handler (from `.symlinks/plugins/permission_handler/ios`)
 
 SPEC REPOS:
   trunk:
     - Protobuf
+    - SwiftProtobuf
 
 EXTERNAL SOURCES:
   Flutter:
     :path: Flutter
-  flutter_blue:
-    :path: ".symlinks/plugins/flutter_blue/ios"
+  flutter_reactive_ble:
+    :path: ".symlinks/plugins/flutter_reactive_ble/ios"
+  permission_handler:
+    :path: ".symlinks/plugins/permission_handler/ios"
 
 SPEC CHECKSUMS:
   Flutter: 434fef37c0980e73bb6479ef766c45957d4b510c
-  flutter_blue: eeb381dc4727a0954dede73515f683865494b370
-  Protobuf: 176220c526ad8bd09ab1fb40a978eac3fef665f7
+  flutter_reactive_ble: ac0ccac596f481b221549cad2abe16987e1f411b
+  permission_handler: ccb20a9fad0ee9b1314a52b70b76b473c5f8dab0
+  Protobuf: 7327d4444215b5f18e560a97f879ff5503c4581c
+  SwiftProtobuf: 3320217e9d8fb75f36b40282e78c482640fd75dd
 
-PODFILE CHECKSUM: 8425580eacd3f8bba239152a8e160feefce23a1b
+PODFILE CHECKSUM: 747255e22636c760b12de7c0193cc579bbb4bc2d
 
 COCOAPODS: 1.10.1
